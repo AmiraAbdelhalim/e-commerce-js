@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>E-commerce homepage</title>
 </head>
 <body>
@@ -29,17 +30,19 @@
     <div class="container" id= "section">
        
     </div>
-    <div class="row">
-    <div class="text-right">
-        <button type="button" class="btn btn-outline-dark">NEXT</button>
-    </div>
-    <div class="text-left">
-        <button type="button" class="btn btn-outline-dark">PREVIOUS</button>
-    </div>
+    <div class="continer">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <button type="button" class="btn btn-outline-dark" id="preBtn">PREVIOUS</button>
+            </div>
+            <div class="ml-auto p-2">
+                <button type="button" class="btn btn-outline-dark" id="nextBtn">NEXT</button>
+            </div>
+        </div>
     </div>
     
        
-    
-    <script src="home.js"></script>    
+    <script src="jq/jquery.js"></script>
+    <script src="home2.js"></script>    
 </body>
 </html>
