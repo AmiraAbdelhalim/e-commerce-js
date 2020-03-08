@@ -13,10 +13,28 @@ submitBtn.onclick = function(ev) {
     const subject = ev.target.form.elements[2].value;
     const msg = ev.target.form.elements[3].value;
 
-    const json = {"name": name, "email": email, "subject": subject, "message": msg};
+    if (!ev.target.form.checkValidity()) {
+        ev.preventDefault();
+        ev.stopPropagation();
+    } else {
+        if(!validateEmail(email)) {
+            ev.target.form.elements[1].classList.add('is-invalid');
+        } else {
+            ev.target.form.elements[1].classList.remove('is-invalid');
+            const json = {"name": name, "email": email, "subject": subject, "message": msg};
 
-    sendMsg(json);
+            sendMsg(json);
+        }
+    } 
+
+    ev.target.form.classList.add('was-validated');
     
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    return re.test(String(email).toLowerCase());
 }
 
 function sendMsg(json) {
@@ -33,6 +51,7 @@ function sendMsg(json) {
         if(msg.status){
             resultField.textContent = msg.message;
             resultField.style.color = 'green';
+            resultField.style.paddingTop = '1rem';
         }
 
         container.appendChild(resultField);

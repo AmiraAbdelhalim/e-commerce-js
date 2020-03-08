@@ -37,20 +37,32 @@
             <div class="form-group row">
                 <div class="col-md-6">
                     <label for="name-field">Name*</label>
-                    <input type="text" class="form-control" id="name-field" placeholder="Enter Name">
+                    <input type="text" class="form-control" id="name-field" placeholder="Enter Name" minlength="3" maxlength="50" required>
+                    <div class="invalid-feedback">
+                      Name should be between 3 to 50 characters
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <label for="email-field">Email*</label>
-                    <input type="email" class="form-control" id="email-field" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" class="form-control" id="email-field" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <div class="invalid-feedback">
+                      Enter a valid email
+                    </div>
                 </div>
             </div>
             <div class="form-group">
                 <label for="sub-field">Subject*</label>
-                <input type="text" class="form-control" id="sub-field" placeholder="Subject">
+                <input type="text" class="form-control" id="sub-field" placeholder="Subject" required>
+                <div class="invalid-feedback">
+                  Required Field
+                </div>
             </div>
             <div class="form-group">
                 <label for="msg-field">Message*</label>
-                <textarea class="form-control" id="msg-field" rows="3" placeholder="Your message ..."></textarea>
+                <textarea class="form-control" id="msg-field" rows="3" placeholder="Your message ..." required></textarea>
+                <div class="invalid-feedback">
+                  Required Field
+                </div>
             </div>
             <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
         </form>

@@ -63,7 +63,7 @@ if(sessionStorage.length){
         imageFig.appendChild(image);
 
         name.textContent = productObj.Name;
-        priceCol.innerHTML = '<span>$</span>' + productObj.Price;
+        priceCol.innerHTML = '<span>&euro;</span>' + productObj.Price;
 
         quantityField.setAttribute('type', 'number');
         quantityField.setAttribute('min', '1');
@@ -74,7 +74,7 @@ if(sessionStorage.length){
             calculateTotal(ev);
         };
 
-        totalCol.innerHTML = '<span>$</span>' + productObj.Price;
+        totalCol.innerHTML = '<span>&euro;</span>' + productObj.Price;
 
         imageCol.append(imageFig);
         nameCol.append(name);
