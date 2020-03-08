@@ -35,7 +35,7 @@ function htmlEl(products){
         cartBtn.addEventListener("click", (e)=>{//adding product to session storage
             console.log(products);
             cartCount++;
-            sessionStorage.setItem("product info"+cartCount,JSON.stringify(products[i]));
+            sessionStorage.setItem(cartCount,JSON.stringify(products[i]));
         })
     }
 
