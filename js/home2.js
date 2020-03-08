@@ -13,16 +13,16 @@ function htmlEl(products){
         const col=document.createElement("div");
         col.className='col-md-6';
         const img=document.createElement("img");
-        const curruncyCode=document.createElement("span");
+        // const curruncyCode=document.createElement("span");
         const price=document.createElement("p");
         const name=document.createElement("p");
         const cartBtn=document.createElement("button");
         name.textContent=products[i].Name;
         img.setAttribute("src",products[i].ProductPicUrl);
-        curruncyCode.textContent=products[i].CurrencyCode;
-        price.textContent=products[i].Price;
+        // curruncyCode.innerHTML= '&euro;';
+        price.innerHTML='<span>&euro;</span>'+products[i].Price;
         cartBtn.className='fa fa-shopping-cart';
-        price.appendChild(curruncyCode);
+        // price.appendChild(curruncyCode);
 
         col.appendChild(name);
         col.appendChild(img);

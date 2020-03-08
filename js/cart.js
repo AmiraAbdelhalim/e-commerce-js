@@ -1,6 +1,39 @@
 const tableBody = document.querySelector('tbody');
 const nothingPara = document.querySelector('table + p');
+const checkoutBtn = document.querySelector('#checkout');
+const purchaseMsg = document.querySelector('#purchase-msg');
 let totalPrice = document.querySelector('#totalPrice').lastChild;
+
+window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+
+const dbName = 'products';
+let dbVersion = 3;
+let store;
+let db;
+
+if(indexedDB) {
+    let request = indexedDB.open(dbName);
+
+    request.onerror = function(event) {
+        console.error("Database error: " + event.target.errorCode);
+    };
+
+    request.onsuccess = function(event) {
+        db = event.target.result;
+        store = db.transaction('products', 'readwrite').objectStore('products');
+    };
+
+    request.onupgradeneeded = function(event) { 
+        // Save the IDBDatabase interface 
+        db = event.target.result;
+        // console.log(db);
+
+        if(!db.objectStoreNames.contains('products'))
+            store = db.createObjectStore('products', {keyPath: 'id', autoIncrement: true});
+        else
+            store = db.transaction('products', 'readwrite').objectStore('products');
+    };
+}
 
 if(sessionStorage.length){
 
@@ -51,6 +84,30 @@ if(sessionStorage.length){
         tableBody.append(row);
 
         totalPrice.data = Number(totalPrice.data) + Number(productObj.Price);
+    }
+}
+
+checkoutBtn.onclick = () => {
+
+    store = db.transaction('products', 'readwrite').objectStore('products');
+
+
+    for(let i = 0; i < sessionStorage.length; i++) {
+        const name = sessionStorage.key(i);
+        const product = JSON.parse(sessionStorage.getItem(name));
+        let res = store.add(product);
+
+        res.onsuccess = () => {
+            purchaseMsg.style.color = 'green';
+            purchaseMsg.style.paddingTop = '1rem';
+            purchaseMsg.textContent = 'Thanks for purchasing';
+        }
+
+        res.onerror = () => {
+            purchaseMsg.style.color = 'red';
+            purchaseMsg.style.paddingTop = '1rem';
+            purchaseMsg.textContent = 'Purchase was unsuccessful';
+        }
     }
 }
 
