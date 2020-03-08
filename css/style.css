@@ -1,0 +1,17 @@
+img {max-width: 100%;}
+
+table figure {
+    width: 10rem;
+}
+
+.table td {vertical-align: middle;}
+
+input {
+    padding: .5em 1em;
+    border-radius: 15px;
+    outline: none;
+}
+
+table + p {
+    margin-bottom: 15rem;
+}
