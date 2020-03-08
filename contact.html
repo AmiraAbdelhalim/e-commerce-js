@@ -44,7 +44,7 @@
                 </div>
                 <div class="col-md-6">
                     <label for="email-field">Email*</label>
-                    <input type="email" class="form-control" id="email-field" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <input type="email" class="form-control" id="email-field" aria-describedby="emailHelp" placeholder="Enter email" pattern = "(.+)@(.+){2,}\.(.+){2,}" required>
                     <div class="invalid-feedback">
                       Enter a valid email
                     </div>
