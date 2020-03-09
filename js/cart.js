@@ -99,25 +99,26 @@ checkoutBtn.onclick = (ev) => {
         quantityOrdered += (+quantityVal);
     }
 
-    for(let i = 0; i < sessionStorage.length; i++) {
+    // for(let i = 0; i < sessionStorage.length; i++) {
         // const name = sessionStorage.key(i);
         // const product = JSON.parse(sessionStorage.getItem(name));
-        let date = new Date();
-        let res = store.add({totalPrice: totalPrice.data, totalQuantity: quantityOrdered, date: date.toDateString()});
+    let date = new Date();
+    let res = store.add({totalPrice: totalPrice.data, totalQuantity: quantityOrdered, date: date.toDateString()});
 
-        res.onsuccess = () => {
-            purchaseMsg.style.color = 'green';
-            purchaseMsg.style.paddingTop = '1rem';
-            purchaseMsg.textContent = 'Thanks for purchasing';
-        }
-
-        res.onerror = () => {
-            purchaseMsg.style.color = 'red';
-            purchaseMsg.style.paddingTop = '1rem';
-            purchaseMsg.textContent = 'Purchase was unsuccessful';
-        }
-
+    res.onsuccess = () => {
+        purchaseMsg.style.color = 'green';
+        purchaseMsg.style.paddingTop = '1rem';
+        purchaseMsg.textContent = 'Thanks for purchasing';
+        sessionStorage.clear();
     }
+
+    res.onerror = () => {
+        purchaseMsg.style.color = 'red';
+        purchaseMsg.style.paddingTop = '1rem';
+        purchaseMsg.textContent = 'Purchase was unsuccessful';
+    }
+
+    // }
 }
 
 function calculateTotal(ev) {
