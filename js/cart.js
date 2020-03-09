@@ -87,28 +87,38 @@ if(sessionStorage.length){
     }
 }
 
-checkoutBtn.onclick = () => {
+checkoutBtn.onclick = (ev) => {
 
     store = db.transaction('products', 'readwrite').objectStore('products');
+    let quantityOrdered = 0;
 
+    const rows = ev.path[3].children[0].tBodies[0].children;
 
-    for(let i = 0; i < sessionStorage.length; i++) {
-        const name = sessionStorage.key(i);
-        const product = JSON.parse(sessionStorage.getItem(name));
-        let res = store.add(product);
-
-        res.onsuccess = () => {
-            purchaseMsg.style.color = 'green';
-            purchaseMsg.style.paddingTop = '1rem';
-            purchaseMsg.textContent = 'Thanks for purchasing';
-        }
-
-        res.onerror = () => {
-            purchaseMsg.style.color = 'red';
-            purchaseMsg.style.paddingTop = '1rem';
-            purchaseMsg.textContent = 'Purchase was unsuccessful';
-        }
+    for(let i = 0; i < rows.length; i++) {
+        let quantityVal = rows[i].cells[3].children[0].value;
+        quantityOrdered += (+quantityVal);
     }
+
+    // for(let i = 0; i < sessionStorage.length; i++) {
+        // const name = sessionStorage.key(i);
+        // const product = JSON.parse(sessionStorage.getItem(name));
+    let date = new Date();
+    let res = store.add({totalPrice: totalPrice.data, totalQuantity: quantityOrdered, date: date.toDateString()});
+
+    res.onsuccess = () => {
+        purchaseMsg.style.color = 'green';
+        purchaseMsg.style.paddingTop = '1rem';
+        purchaseMsg.textContent = 'Thanks for purchasing';
+        sessionStorage.clear();
+    }
+
+    res.onerror = () => {
+        purchaseMsg.style.color = 'red';
+        purchaseMsg.style.paddingTop = '1rem';
+        purchaseMsg.textContent = 'Purchase was unsuccessful';
+    }
+
+    // }
 }
 
 function calculateTotal(ev) {
