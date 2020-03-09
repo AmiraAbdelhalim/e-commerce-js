@@ -43,7 +43,7 @@ if(sessionStorage.length){
         const productName = sessionStorage.key(i);
         const productObj = JSON.parse(sessionStorage.getItem(productName));
 
-        console.log(productObj);
+        // console.log(productObj);
 
         const row = document.createElement('tr');
         const imageCol = document.createElement('td');
@@ -99,9 +99,6 @@ checkoutBtn.onclick = (ev) => {
         quantityOrdered += (+quantityVal);
     }
 
-    // for(let i = 0; i < sessionStorage.length; i++) {
-        // const name = sessionStorage.key(i);
-        // const product = JSON.parse(sessionStorage.getItem(name));
     let date = new Date();
     let res = store.add({totalPrice: totalPrice.data, totalQuantity: quantityOrdered, date: date.toDateString()});
 
@@ -117,8 +114,6 @@ checkoutBtn.onclick = (ev) => {
         purchaseMsg.style.paddingTop = '1rem';
         purchaseMsg.textContent = 'Purchase was unsuccessful';
     }
-
-    // }
 }
 
 function calculateTotal(ev) {
@@ -127,8 +122,6 @@ function calculateTotal(ev) {
     const quantity = ev.target.value;
     const rows = Array.from(ev.path[3].rows);
 
-    // console.log(ev)
-
     const newTotal = quantity * Number(price);
 
     totalField.data = newTotal;
@@ -136,9 +129,6 @@ function calculateTotal(ev) {
     totalPrice.data = 0;
 
     rows.forEach(row => {
-        // console.log(row.lastChild)
         totalPrice.data = Number(totalPrice.data) + Number(row.lastChild.lastChild.data);
     });
-
-    // console.log(ev);
 }
