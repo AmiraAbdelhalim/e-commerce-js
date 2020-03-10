@@ -15,9 +15,11 @@ renderPage(); // Render first Page
 searchBtn.addEventListener('click', (ev) => {
     ev.preventDefault();
     const inputField = ev.path[1].elements[0];
-    const searchVal = inputField.value;
-
+    const searchVal = inputField.value; //const
+    // var result = searchVal.split(' ').join('')
+    
     renderPage(searchVal);
+    // renderPage(searchVal);
 })
 
 
@@ -34,6 +36,8 @@ function htmlEl(products, search=false){
         col.className='col-md-6';
         const img=document.createElement("img");
         // const curruncyCode=document.createElement("span");
+        const contView=document.createElement("a");
+        const cartDiv=document.createElement("div");//div for cart button
         const price=document.createElement("p");
         const name=document.createElement("p");
         const cartBtn=document.createElement("button");
@@ -42,15 +46,21 @@ function htmlEl(products, search=false){
         // curruncyCode.innerHTML= '&euro;';
         price.innerHTML='<span>&euro;</span>'+products[i].Price;
         cartBtn.className='fa fa-shopping-cart';
+        contView.setAttribute('href', `cart.html?ProductId=${products[i].ProductId}`);//to add view page
         // price.appendChild(curruncyCode);
 
         col.appendChild(name);
         col.appendChild(img);
         col.appendChild(price);
-        col.appendChild(cartBtn)
-        row.appendChild(col);
+        contView.appendChild(col);
+        cartDiv.appendChild(cartBtn)
+        // contView.appendChild(col);
+        row.appendChild(contView);
+        row.appendChild(cartDiv);
+        // row.appendChild(cartBtn)
         
         divProducts.appendChild(row);
+        
         
         cartBtn.addEventListener("click", (e)=>{//adding product to session storage
             // console.log(products);
@@ -63,21 +73,21 @@ function htmlEl(products, search=false){
         //adding next , previous button and page number
         const nextBtn=document.createElement("button");
         nextBtn.textContent='NEXT';
-        nextBtn.className="btn btn-outline-dark";
+        nextBtn.className="btn btn-outline-dark col-md-2";
         //justify-content-end p-2 
         nextBtn.addEventListener("click", (e)=>getNextPage());
         
 
         const prevBtn=document.createElement("button");
         prevBtn.textContent='PREVIOUS';
-        prevBtn.className=" btn btn-outline-dark";
+        prevBtn.className=" btn btn-outline-dark col-md-2";
         //justify-content-start p-2
         prevBtn.addEventListener("click", (e)=>getPrevPage());
 
 
         const pageNum=document.createElement("p");
         pageNum.textContent="Page: "+count;
-        // pageNum.className="justify-content-center";
+        pageNum.className="col-md-2";
 
         //check whether to show next , previous or both
         if (count ===1){
@@ -111,7 +121,7 @@ function renderPage(search = '') {
         })
         .done(function(response){
             products=response.data;
-            console.log(products)
+            console.log(products.Name);
             htmlEl(products, true);
         })
     }
