@@ -6,6 +6,7 @@ row.className='row';//to give it a class
 let count=1;//page count
 let cartCount=0;//cart count to add it to the key in session storage
 
+const searchBtn= document.querySelector("#search");
 
 //function to render html
 function htmlEl(products){
@@ -33,10 +34,28 @@ function htmlEl(products){
         divProducts.appendChild(row);
         
         cartBtn.addEventListener("click", (e)=>{//adding product to session storage
-            console.log(products);
+            // console.log(products);
             cartCount++;
             sessionStorage.setItem(cartCount,JSON.stringify(products[i]));
         })
+
+        searchBtn.addEventListener("click", (e)=>{
+            // console.log(e);
+            searchString=e.path[1].elements[0].value;
+            // console.log(searchString);
+            // console.log(products[1].Name);
+            if (searchString===products[i].Name){
+                console.log(products[i].Name);
+                
+            }// }else{
+            //     console.log("didnt match any");
+                
+            // }
+            
+            
+        })
+
+        
     }
 
     //adding next , previous button and page number
@@ -66,6 +85,23 @@ function htmlEl(products){
     }else{
         btn.append(prevBtn,pageNum,nextBtn);
     }
+
+    //search
+    // searchBtn.addEventListener("click", (e)=>{
+    //     // console.log(e);
+    //     searchString=e.path[1].elements[0].value;
+    //     // console.log(searchString);
+    //     // console.log(products[1].Name);
+    //     if (searchString===products[i].Name){
+    //         console.log(products[i].Name);
+            
+    //     }else{
+    //         console.log("didnt match any");
+            
+    //     }
+        
+        
+    // })
 
 }
 
@@ -118,3 +154,5 @@ function getPrevPage(){
         htmlEl(products);
     }) 
 }
+
+
