@@ -46,7 +46,7 @@ function htmlEl(products, search=false){
         // curruncyCode.innerHTML= '&euro;';
         price.innerHTML='<span>&euro;</span>'+products[i].Price;
         cartBtn.className='fa fa-shopping-cart';
-        contView.setAttribute('href', `cart.html?ProductId=${products[i].ProductId}`);//to add view page
+        contView.setAttribute('href', `details.html?ProductId=${products[i].ProductId}`);//to add view page
         // price.appendChild(curruncyCode);
 
         col.appendChild(name);
