@@ -15,3 +15,22 @@ input {
 table + p {
     margin-bottom: 15rem;
 }
+
+a:hover, a {
+    text-decoration: none;
+    color: black;
+    height: 87%;
+}
+
+/* a figure {
+    height: 85%;
+} */
+
+nav, #section .card {
+    box-shadow: 1px 1px 3px 3px #eee;
+    background: white;
+}
+
+#section {
+    margin-top: 5rem;
+}
