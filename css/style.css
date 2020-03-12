@@ -22,18 +22,14 @@ a:hover, a {
     height: 87%;
 }
 
-/* a figure {
-    height: 85%;
-} */
-
-nav, #section .card {
+nav, #section .card, .image-card {
     box-shadow: 1px 1px 3px 3px #eee;
     background: white;
 }
 
-#section {
-    margin-top: 5rem;
-    min-height: 100vh;
+#section, #cart, #contact, #history, #box{
+    padding-top: 5rem;
+    min-height: 90vh;
 }
 
 .cart-btn {

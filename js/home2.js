@@ -136,8 +136,8 @@ function renderPage(search = '') {
 //to get the next page
 function getNextPage(){
     // divProducts.innerHTML="";
-    row.innerHTML="";
-    btn.innerHTML="";
+    // row.innerHTML="";
+    // btn.innerHTML="";
 
     count++;
     $.ajax({
@@ -159,8 +159,8 @@ function getNextPage(){
 //previous page
 function getPrevPage(){
     // divProducts.innerHTML="";
-    row.innerHTML="";
-    btn.innerHTML="";
+    // row.innerHTML="";
+    // btn.innerHTML="";
     count--;
     $.ajax({
         method:"GET",

@@ -17,6 +17,11 @@ xhr.onload=()=>{
     let divv2 =document.createElement("div");
     let div =document.createElement("div");
     let divv3 =document.createElement("div");
+    let imageDiv = document.createElement('figure');
+    imageDiv.classList.add('m-auto');
+    let btn=document.createElement("button");
+    let i=document.createElement("i");
+  
     for (const property in res) {
         let p =document.createElement("p");
         if(property=="Price"){
@@ -30,33 +35,41 @@ xhr.onload=()=>{
 
 
         }else if(property=="Category"||property=="Description"||property=="Name"){
-            divv.appendChild(p);
-            p.textContent=property + " : "+res[property];
-        
+            divv3.appendChild(p);
+            p.textContent=property + " : "+res[property];     
         }
     }
     let image=document.createElement("img");
     
     
     b.appendChild(div);
-    b.appendChild(div); 
+    // b.appendChild(div); 
     div.appendChild(div2);
    
     div2.appendChild(divv2);
     div2.appendChild(divv);
     div2.appendChild(divv3);
-    divv2.appendChild(image);
+    imageDiv.appendChild(image);
+    divv2.appendChild(imageDiv);
+    divv3.appendChild(btn);
+    // div.appendChild(btn);
+    btn.appendChild(i);
 
-    b.setAttribute("class"," mt-5");
     div.setAttribute("class","container");
-    div2.setAttribute("class","row");
+    div2.setAttribute("class","row align-items-stretch");
   
    
-    divv2.setAttribute("class","col");
-    divv.setAttribute("class","col my-auto");
-    divv3.setAttribute("class","col border border-info rounded w-25 card ");
+    divv2.setAttribute("class","col-md-6 card image-card");
+    // divv.setAttribute("class","col-md-6 my-auto");
+    divv3.setAttribute("class","col-md-6 pl-5");
     
     image.setAttribute("src",res.ProductPicUrl);
+    btn.innerHTML="<i class='fa fa-shopping-cart'></i>";
+    // btn.textContent="card";
+    btn.addEventListener("click",(ev)=>{
+        sessionStorage.setItem(sessionStorage.length,JSON.stringify(res));
+    })
+
 
     
     
