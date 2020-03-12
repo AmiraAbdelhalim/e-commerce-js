@@ -27,7 +27,7 @@ nav, #section .card, .image-card {
     background: white;
 }
 
-#section, #cart, #contact, #history, #box{
+.home, #cart, #contact, #history, #box{
     padding-top: 5rem;
     min-height: 90vh;
 }
@@ -37,4 +37,34 @@ nav, #section .card, .image-card {
     border: none;
     border-radius: 10px;
     font-size: 1.2em;
+}
+
+.title-style{position: relative;}
+
+.title-style::after {
+  content: '';
+  width: 5%;
+  height: 8%;
+  background-color: #ffc107;
+  position: absolute;
+  top: 103%;
+}
+
+#cart #cart-title::after {
+    width: 3%;
+    left: 48.5%;
+}
+
+#cart #total-title::after, #contact h3::after {
+    width: 12%;
+    left: 0;
+}
+
+#history h3::after {
+    width: 7%;
+    left: 46.5%;
+}
+
+.home h3::after{
+    left: 47.5%;
 }

@@ -38,19 +38,20 @@
         </nav>
     </header>
 
-    <div class="container" id="contact" style="margin-top: 5%">
+    <div class="container" id="contact">
+        <h3 class="title-style mb-5" id="contact-title">Leave us a message</h3>
         <form>
             <div class="form-group row">
                 <div class="col-md-6">
                     <label for="name-field">Name*</label>
-                    <input type="text" class="form-control" id="name-field" placeholder="Enter Name" minlength="3" maxlength="50" required>
+                    <input type="text" class="form-control mb-2" id="name-field" placeholder="Enter Name" minlength="3" maxlength="50" required>
                     <div class="invalid-feedback">
                       Name should be between 3 to 50 characters
                     </div>
                 </div>
                 <div class="col-md-6">
                     <label for="email-field">Email*</label>
-                    <input type="email" class="form-control" id="email-field" aria-describedby="emailHelp" placeholder="Enter email" pattern = "(.+)@(.+){2,}\.(.+){2,}" required>
+                    <input type="email" class="form-control mb-2" id="email-field" aria-describedby="emailHelp" placeholder="Enter email" pattern = "(.+)@(.+){2,}\.(.+){2,}" required>
                     <div class="invalid-feedback">
                       Enter a valid email
                     </div>
@@ -58,7 +59,7 @@
             </div>
             <div class="form-group">
                 <label for="sub-field">Subject*</label>
-                <input type="text" class="form-control" id="sub-field" placeholder="Subject" required>
+                <input type="text" class="form-control mb-2" id="sub-field" placeholder="Subject" required>
                 <div class="invalid-feedback">
                   Required Field
                 </div>
@@ -70,7 +71,7 @@
                   Required Field
                 </div>
             </div>
-            <button id="submitBtn" type="submit" class="btn btn-dark">Submit</button>
+            <button id="submitBtn" type="submit" class="btn btn-dark mb-2">Submit</button>
         </form>
     </div>
 

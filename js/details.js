@@ -27,11 +27,11 @@ xhr.onload=()=>{
         if(property=="Price"){
             divv3.appendChild(p);
             p.setAttribute("class","display-2 text-secondary text-center");
-            p.textContent=res[property]+"$"+"\n";
+            p.innerHTML="&euro;"+res[property]+"\n";
         }else if(property=="Quantity"){
             divv3.appendChild(p);
             p.setAttribute("class","text-secondary my-auto");
-            p.textContent=property + "\n"+res[property];
+            p.textContent='In Stock' + "\n"+res[property];
 
 
         }else if(property=="Category"||property=="Description"||property=="Name"){
