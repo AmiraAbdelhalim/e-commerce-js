@@ -33,16 +33,19 @@ xhr.onload=()=>{
         if(property=="Name"){
             
             h2_name.textContent=res[property];
+            h2_name.className = 'title-style mt-3'
 
         }else if(property=="Price"){
             //divv3.appendChild(p);
 
-            h5_price.setAttribute("class","text-secondary");
-            h5_price.textContent=res[property]+"$"+"\n";
+            // h5_price.setAttribute("class","text-secondary");
+            h5_price.className = 'text-secondary mt-3';
+            h5_price.innerHTML="&euro;"+res[property]+"\n";
         }else if(property=="Quantity"){
             //divv3.appendChild(p);
-            p_quantity.setAttribute("class","text-secondary my-auto");
-            p_quantity.textContent=property + "\n"+res[property];
+            // p_quantity.setAttribute("class","text-secondary my-auto");
+            p_quantity.className = 'text-secondary mt-3 my-auto';
+            p_quantity.textContent= "In Stock: "+res[property];
 
 
         }else if(property=="Description"){
@@ -50,6 +53,7 @@ xhr.onload=()=>{
            p_discription.textContent=res[property];     
         }else if(property=="Category"){
             p_category.textContent=res[property]; 
+            p_category.style.fontWeight = 'bold';
         }
     }
     let image=document.createElement("img");
@@ -75,11 +79,11 @@ xhr.onload=()=>{
     btn.appendChild(i);
 
 
-    h2_name.setAttribute("class","mt-3");
-    h5_price.setAttribute("class","mt-3");
+    // h2_name.setAttribute("class","mt-3");
+    // h5_price.setAttribute("class","mt-3");
     p_category.setAttribute("class","mt-3");
     p_discription.setAttribute("class","mt-3");
-    p_quantity.setAttribute("class","mt-3");
+    // p_quantity.setAttribute("class","mt-3");
 
 
     div.setAttribute("class","container");
@@ -91,15 +95,13 @@ xhr.onload=()=>{
     divv3.setAttribute("class","col-md-6 pl-5");
     
     image.setAttribute("src",res.ProductPicUrl);
-    btn.innerHTML="<i class='fa fa-shopping-cart'></i>";
+    // btn.textContent="<i class='fa fa-shopping-cart bg-dark'></i>";
+    btn.setAttribute('id', 'cartBtn');
+    btn.className='bg-dark btn-block text-light px-4 py-3 mt-5';
+    btn.textContent = 'Add To Cart';
+    btn.style.fontWeight = 'bold';
     // btn.textContent="card";
     btn.addEventListener("click",(ev)=>{
-        sessionStorage.setItem(sessionStorage.length,JSON.stringify(res));
-    })
-
-
-    
-    
-    
-
+        sessionStorage.setItem(sessionStorage.length + 1,JSON.stringify(res));
+    }) 
 }

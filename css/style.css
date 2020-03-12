@@ -32,6 +32,14 @@ nav, #section .card, .image-card {
     min-height: 90vh;
 }
 
+#cart {
+    padding-top: 0;
+}
+
+#cart-title {
+    padding-top: 5rem;
+}
+
 .cart-btn {
     outline: none;
     border: none;
@@ -50,9 +58,10 @@ nav, #section .card, .image-card {
   top: 103%;
 }
 
-#cart #cart-title::after {
+#cart-title::after {
     width: 3%;
     left: 48.5%;
+    height: 2%;
 }
 
 #cart #total-title::after, #contact h3::after {
@@ -67,4 +76,14 @@ nav, #section .card, .image-card {
 
 .home h3::after{
     left: 47.5%;
+}
+
+#box #cartBtn {
+    border: none;
+    border-radius: 5px;
+}
+
+#box h2::after {
+    width: 13%;
+    left: 0;
 }
