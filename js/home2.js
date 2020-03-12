@@ -8,7 +8,6 @@ let cartCount=0;//cart count to add it to the key in session storage
 
 const searchBtn = document.querySelector('#searchBtn');
 let products;
-// let filteredProducts;
 
 renderPage(); // Render first Page
 
@@ -28,8 +27,6 @@ function htmlEl(products, search=false){
 
     divProducts.innerHTML = "";
     btn.innerHTML = "";
-
-    // console.log(products.length)
     
     for (let i=0; i< products.length; i++){//render html to each product
 
@@ -45,41 +42,32 @@ function htmlEl(products, search=false){
         const contView=document.createElement("a");
         const imageCont = document.createElement('figure');
         const priceCont = document.createElement('div');
-        priceCont.className = 'row justify-content-between';
-        // contView.className = 'col-md-12';
-        // const cartDiv=document.createElement("div");//div for cart button
-        const price=document.createElement("p");
+
+        priceCont.className = 'row justify-content-between align-items-center';
+
+        const price=document.createElement("span");
         const name=document.createElement("h5");
         const cartBtn=document.createElement("button");
+        
         name.textContent=products[i].Name;
         img.setAttribute("src",products[i].ProductPicUrl);
-        // curruncyCode.innerHTML= '&euro;';
         price.innerHTML='<span>&euro;</span>'+products[i].Price;
-        cartBtn.className='fa fa-shopping-cart';
+        cartBtn.className='fa fa-shopping-cart cart-btn bg-dark text-light px-4 py-2';
         contView.setAttribute('href', `details.html?ProductId=${products[i].ProductId}`);//to add view page
-        // price.appendChild(curruncyCode);
 
-        // col.appendChild(name);
-        // col.appendChild(img);
-        // col.appendChild(price);
-        // contView.appendChild(col);
         imageCont.appendChild(img);
         priceCont.append(price, cartBtn);
         contView.append(name, imageCont);
         col.append(contView, priceCont);
-        // cartDiv.appendChild(cartBtn)
-        // contView.appendChild(col);
         row.appendChild(col);
-        // row.appendChild(cartDiv);
-        // row.appendChild(cartBtn)
-        
+    
         divProducts.appendChild(row);
         
         
         cartBtn.addEventListener("click", (e)=>{//adding product to session storage
-            // console.log(products);
-            // e.stopPropagation();
             cartCount++;
+            // cartBtn.classList.remove('fa-shopping-cart');
+            // cartBtn.classList.add('fa-check');
             sessionStorage.setItem(cartCount,JSON.stringify(products[i]));
         })
     }

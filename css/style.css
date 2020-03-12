@@ -33,4 +33,12 @@ nav, #section .card {
 
 #section {
     margin-top: 5rem;
+    min-height: 100vh;
+}
+
+.cart-btn {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
 }
