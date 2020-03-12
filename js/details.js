@@ -21,22 +21,35 @@ xhr.onload=()=>{
     imageDiv.classList.add('m-auto');
     let btn=document.createElement("button");
     let i=document.createElement("i");
+    let h2_name=document.createElement("h2");
+    let h5_price=document.createElement("h5");
+    let p_quantity=document.createElement("p");
+    let p_discription=document.createElement("p");
+    let p_category=document.createElement("p");
+
   
     for (const property in res) {
-        let p =document.createElement("p");
-        if(property=="Price"){
-            divv3.appendChild(p);
-            p.setAttribute("class","display-2 text-secondary text-center");
-            p.innerHTML="&euro;"+res[property]+"\n";
+        //let p =document.createElement("p");
+        if(property=="Name"){
+            
+            h2_name.textContent=res[property];
+
+        }else if(property=="Price"){
+            //divv3.appendChild(p);
+
+            h5_price.setAttribute("class","text-secondary");
+            h5_price.textContent=res[property]+"$"+"\n";
         }else if(property=="Quantity"){
-            divv3.appendChild(p);
-            p.setAttribute("class","text-secondary my-auto");
-            p.textContent='In Stock' + "\n"+res[property];
+            //divv3.appendChild(p);
+            p_quantity.setAttribute("class","text-secondary my-auto");
+            p_quantity.textContent=property + "\n"+res[property];
 
 
-        }else if(property=="Category"||property=="Description"||property=="Name"){
-            divv3.appendChild(p);
-            p.textContent=property + " : "+res[property];     
+        }else if(property=="Description"){
+           // divv3.appendChild(p);
+           p_discription.textContent=res[property];     
+        }else if(property=="Category"){
+            p_category.textContent=res[property]; 
         }
     }
     let image=document.createElement("img");
@@ -51,9 +64,23 @@ xhr.onload=()=>{
     div2.appendChild(divv3);
     imageDiv.appendChild(image);
     divv2.appendChild(imageDiv);
+    divv3.appendChild(h2_name);
+    divv3.appendChild(h5_price);
+    divv3.appendChild(p_discription);
+    divv3.appendChild(p_category);
+    divv3.appendChild(p_quantity);
+
     divv3.appendChild(btn);
     // div.appendChild(btn);
     btn.appendChild(i);
+
+
+    h2_name.setAttribute("class","mt-3");
+    h5_price.setAttribute("class","mt-3");
+    p_category.setAttribute("class","mt-3");
+    p_discription.setAttribute("class","mt-3");
+    p_quantity.setAttribute("class","mt-3");
+
 
     div.setAttribute("class","container");
     div2.setAttribute("class","row align-items-stretch");
