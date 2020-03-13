@@ -18,6 +18,10 @@ body {
     margin-bottom: 16px;
     padding: 0 8px;
   }
+
+  #about {
+    min-height: 90vh;
+  }
   
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -26,6 +30,7 @@ body {
   
   .about-section {
     padding: 5%;
+    padding-top: 5rem;
     text-align: left;
     background-image: url("../img/11.jpg");
     background-repeat: no-repeat;

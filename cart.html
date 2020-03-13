@@ -5,65 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
 
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="home.html">Home </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="cart.html">Cart<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
-    </nav> -->
-
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
-      <a class="navbar-brand text-primary" href="home.html">E-COMMERCE</a>
-      <div class="collapse navbar-collapse" id="navbarcontent">
-          <ul class="navbar-nav mr-auto ml-auto">
-              <li class="nav-item active">
-                  <a class="nav-link text-warning" href="home.html">HOME</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link text-warning" href="about.html">ABOUT</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link text-warning" href="cart.html">CART</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link text-warning" href="contact.html">CONTACT US</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link text-warning" href="order-history.html">ORDERS HISTORY</a>
-              </li>
-          </ul>
-      </div>
-  </nav>
-    <div class="container" id="cart" style="margin-top: 5%;">
-        <table class="table table-responsive-md mb-5">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand text-light" href="home.html">E-COMMERCE</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcontent" aria-controls="navbarcontent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarcontent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="cart.html">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="order-history.html">History</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container" id="cart">
+        <table class="table table-striped table-responsive-md mb-5">
             <thead>
               <tr>
                 <th scope="col" colspan="2">Product</th>
                 <th scope="col">Price</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Total</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -72,18 +55,26 @@
         <p class="text-center">Nothing in Cart</p>
 
         <div class="row justify-content-end mt-3 mb-5" id="checkout">
-            <div class="col-md-4">
+            <div class="col-md-4 col-6">
                 <h3>Cart Total</h3>
                 <div class="row justify-content-between">
-                    <p class="col-md-6">Total</p>
-                    <p id="totalPrice" class="col-md-6"><span>$</span>0</p>
+                    <p class="col-6">Total</p>
+                    <p id="totalPrice" class="col-6"><span>$</span>0</p>
                 </div>
-                <button class="btn btn-primary" id="checkout">Checkout</button>
+                <button class="btn btn-dark" id="checkout">Checkout</button>
                 <p id="purchase-msg"></p>
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-4">
+        Copyright&copy; 2020 - ITI OS Team
+    </footer>
     
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/cart.js"></script>
 </body>
 </html>

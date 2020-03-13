@@ -29,14 +29,6 @@ submitBtn.onclick = function(ev) {
     
 }
 
-// function validateEmail(email) {
-//     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-//     // let re = /(.+)@(.+){2,}\.(.+){2,}/;
-
-//     return re.test(String(email).toLowerCase());
-// }
-
 function sendMsg(json) {
     $.ajax({
         method: "POST",

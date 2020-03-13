@@ -28,11 +28,15 @@ table + p {
     
     border: none;
     outline: none;
-    color: #ffc107;
+    color: rgba(255,255,255,.5);
     padding: 8px;
     background-color: inherit;
     font-family: inherit; /* Important for vertical align on mobile phones */
     margin: 0; /* Important for vertical align on mobile phones */
+  }
+
+  .dropdown .dropbtn:hover {
+    color: rgba(255,255,255,.75)
   }
   
   /* Add a red background color to navbar links on hover */
