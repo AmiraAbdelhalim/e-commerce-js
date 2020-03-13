@@ -57,12 +57,25 @@ function htmlEl(products, search=false){
             row.appendChild(col);
         
             divProducts.appendChild(row);
+
+            for(let j = 0; j < sessionStorage.length; j++) {
+                const productName = sessionStorage.key(j);
+                const product = JSON.parse(sessionStorage.getItem(productName));
+
+                if(product.ProductId === products[i].ProductId) {
+                    cartBtn.classList.remove('fa-shopping-cart');
+                    cartBtn.classList.add('fa-check');
+                    cartBtn.disabled = true;
+                    break;
+                }
+            }
             
             
             cartBtn.addEventListener("click", (e)=>{//adding product to session storage
                 cartCount++;
-                // cartBtn.classList.remove('fa-shopping-cart');
-                // cartBtn.classList.add('fa-check');
+                cartBtn.classList.remove('fa-shopping-cart');
+                cartBtn.classList.add('fa-check');
+                cartBtn.disabled = true;
                 sessionStorage.setItem(cartCount,JSON.stringify(products[i]));
             })
         }

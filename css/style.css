@@ -16,6 +16,11 @@ table + p {
     margin-bottom: 15rem;
 }
 
+a:hover, a {
+  text-decoration: none;
+  color: black;
+  height: 87%;
+}
 
 nav, #section .card, .image-card {
     box-shadow: 1px 1px 3px 3px #eee;
@@ -40,6 +45,7 @@ nav, #section .card, .image-card {
     border: none;
     border-radius: 10px;
     font-size: 1.2em;
+    transition: all 2s ease-in-out;
 }
 
 .title-style{position: relative;}
@@ -135,3 +141,5 @@ nav, #section .card, .image-card {
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  /* .closed {display: none;}
+  .opened {display: block;} */

@@ -1,7 +1,9 @@
 const categories = document.querySelector('#categories');
+// const catBtn = document.querySelector('button.cat-btn');
 const supplier = document.querySelector('#supplier');
+// const supBtn = document.querySelector('button.sup-btn');
 
-let req = new XMLHttpRequest();
+let req = new XMLHttpRequest(); 
 
 req.open('GET', ' https://afternoon-falls-30227.herokuapp.com/api/v1/products-stats/');
 req.send();
@@ -24,7 +26,7 @@ req.onload = function() {
         })
         .done(function(response){
             const products=response.data;
-            htmlEl(products);
+            htmlEl(products, true);
         }) 
            
         })
@@ -48,7 +50,7 @@ req.onload = function() {
         })
         .done(function(response){
             const products=response.data;
-            htmlEl(products);
+            htmlEl(products, true);
         }) 
            
         })

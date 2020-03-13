@@ -102,6 +102,7 @@ xhr.onload=()=>{
     btn.style.fontWeight = 'bold';
     // btn.textContent="card";
     btn.addEventListener("click",(ev)=>{
+        btn.textContent = 'Added To Cart';
         sessionStorage.setItem(sessionStorage.length + 1,JSON.stringify(res));
     }) 
 }
