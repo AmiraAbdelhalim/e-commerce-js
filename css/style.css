@@ -16,11 +16,6 @@ table + p {
     margin-bottom: 15rem;
 }
 
-a:hover, a {
-    text-decoration: none;
-    color: black;
-    height: 87%;
-}
 
 nav, #section .card, .image-card {
     box-shadow: 1px 1px 3px 3px #eee;
@@ -87,3 +82,56 @@ nav, #section .card, .image-card {
     width: 13%;
     left: 0;
 }
+
+.dropdown {
+    float: left;
+    
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    
+    border: none;
+    outline: none;
+    color: rgba(255,255,255,.5);
+    padding: 8px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+
+  .dropdown .dropbtn:hover {
+    color: rgba(255,255,255,.75)
+  }
+  
+  /* Add a red background color to navbar links on hover */
+
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

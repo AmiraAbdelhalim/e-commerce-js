@@ -169,3 +169,5 @@ function getPrevPage(){
         htmlEl(products);
     }) 
 }
+
+
