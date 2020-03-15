@@ -11,12 +11,12 @@ body {
 
 .first-nav, footer, .title-style::after,
 .next-btn:hover, .prev-btn:hover, .cart-btn:hover, .checkout-btn:hover,
-.remove-btn:hover, .submit-btn:hover, .add-btn:hover{
+.remove-btn:hover, .submit-btn:hover, .add-btn:hover, #myBtn:hover{
   background: linear-gradient(135deg, #7c3552, #343a40, #7c3552);
 }
 
 .next-btn, .prev-btn, .cart-btn, .checkout-btn,
-.remove-btn, .submit-btn, .add-btn {
+.remove-btn, .submit-btn, .add-btn, #myBtn {
   font-weight: bold;
 }
 
@@ -179,5 +179,23 @@ a:hover, a {
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  /* .closed {display: none;}
-  .opened {display: block;} */
+ 
+  #myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    /* border: none; Remove borders */
+    /* outline: none; Remove outline */
+    background-color: white; /*Set a background color*/
+    /* color: white; Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  /* #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  /* } */ 

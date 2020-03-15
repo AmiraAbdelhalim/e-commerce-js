@@ -13,9 +13,6 @@ req.onload = function() {
     let Suppliers  = res.data.Groups.SupplierName;
     // console.log(Object.keys(Category)[0]);
     for (const [key, value] of Object.entries(Category)) {
-        // console.log(key, value);
-        // let newCategory = document.createElement('span');
-        // newCategory.innerHTML = "<a href='# " + "'>" + key + " " + value + "</a>";
         let newCategory = document.createElement('a');
         newCategory.textContent = key + " " + value;
         newCategory.href = '#';
@@ -39,9 +36,6 @@ req.onload = function() {
      
 
       for (const [key, value] of Object.entries(Suppliers)) {
-        // console.log(key, value);
-        // let newSupplier = document.createElement('span');
-        // newSupplier.innerHTML = "<a href='# " + "'>" + key + " " + value + "</a>";
         let newSupplier = document.createElement('a');
         newSupplier.textContent = key + " " + value;
         newSupplier.href = '#';

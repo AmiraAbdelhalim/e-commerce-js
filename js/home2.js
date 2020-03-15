@@ -160,7 +160,7 @@ function getNextPage(){
         
         const products=response.data;
         // console.log(products);
-        
+        topFunction();
         htmlEl(products);
     }) 
 }
@@ -179,6 +179,7 @@ function getPrevPage(){
     })
     .done(function(response){
         const products=response.data;
+        topFunction();
         htmlEl(products);
     }) 
 }

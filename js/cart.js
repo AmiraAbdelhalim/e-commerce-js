@@ -132,7 +132,8 @@ checkoutBtn.onclick = (ev) => {
             purchaseMsg.style.paddingTop = '1rem';
             purchaseMsg.textContent = 'Thanks for purchasing';
             sessionStorage.clear();
-            tableBody.innerHTML = '';
+            totalPrice.data = 0;
+            tableBody.style.visibility = 'hidden';
         }
 
         res.onerror = () => {
