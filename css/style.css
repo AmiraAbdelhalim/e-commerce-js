@@ -10,8 +10,14 @@ body {
 }
 
 .first-nav, footer, .title-style::after,
-.next-btn:hover, .prev-btn:hover, .cart-btn:hover, .checkout-btn:hover, .remove-btn:hover{
+.next-btn:hover, .prev-btn:hover, .cart-btn:hover, .checkout-btn:hover,
+.remove-btn:hover, .submit-btn:hover{
   background: linear-gradient(135deg, #7c3552, #343a40, #7c3552);
+}
+
+.next-btn, .prev-btn, .cart-btn, .checkout-btn,
+.remove-btn, .submit-btn {
+  font-weight: bold;
 }
 
 .navbar-light .navbar-nav .nav-link {
