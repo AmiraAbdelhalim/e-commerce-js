@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between first-nav">
+            <a class="navbar-brand text-light" href="home.html">E-COMMERCE</a>
+        </nav>
+
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light second-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcontent" aria-controls="navbarcontent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarcontent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="cart.html">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="order-history.html">History</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <h3 class="title-style text-center mb-5" id="cart-title">Cart</h3>
+    <div class="container" id="cart">
+        <table class="table table-striped table-responsive-md mb-5">
+            <thead>
+              <tr>
+                <th scope="col" colspan="2">Product</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <p class="text-center">Nothing in Cart</p>
+
+        <div class="row justify-content-end mt-3 mb-5" id="checkout">
+            <div class="col-md-4 col-6">
+                <h3 class="title-style mb-4" id="total-title">Cart Total</h3>
+                <div class="row justify-content-between">
+                    <p class="col-6">Total</p>
+                    <p id="totalPrice" class="col-6"><span>&euro;</span>0</p>
+                </div>
+                <button class="btn btn btn-outline-dark checkout-btn">Checkout</button>
+                <p id="purchase-msg"></p>
+            </div>
+        </div>
+    </div>
+
+    <button id="myBtn" class="btn btn-outline-dark fa fa-arrow-up" title="Go to top"></button>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-4">
+        Copyright&copy; 2020 - ITI OS Team
+    </footer>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/top-script.js"></script>
+</body>
+</html>

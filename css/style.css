@@ -1,0 +1,201 @@
+body {
+  /* background: linear-gradient(#333, #7c3552); */
+  background: 
+    /* linear-gradient(
+      rgba(134, 130, 130, 0.45), 
+      #7c3552
+    ), */
+    url(../img/main-bg.jpeg);
+  background-size: cover;
+}
+
+.first-nav, footer, .title-style::after,
+.next-btn:hover, .prev-btn:hover, .cart-btn:hover, .checkout-btn:hover,
+.remove-btn:hover, .submit-btn:hover, .add-btn:hover, #myBtn:hover{
+  background: linear-gradient(135deg, #7c3552, #343a40, #7c3552);
+}
+
+.next-btn, .prev-btn, .cart-btn, .checkout-btn,
+.remove-btn, .submit-btn, .add-btn, #myBtn {
+  font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #7c3552;
+}
+
+img {max-width: 100%;}
+
+table figure {
+    width: 10rem;
+}
+
+.table td {vertical-align: middle;}
+
+input {
+    padding: .5em 1em;
+    border-radius: 15px;
+    outline: none;
+}
+
+table + p {
+    margin-bottom: 15rem;
+}
+
+a:hover, a {
+  text-decoration: none;
+  color: black;
+  height: 87%;
+}
+
+#section .card, .image-card {
+    box-shadow: 1px 1px 3px 3px #eee;
+    background: white;
+}
+
+ .home, #cart, #contact, #history, #box{
+    padding-top: 3rem;
+    min-height: 90vh;
+}
+/* 
+.card:hover {
+  transform: scale(1.1);
+  transition: transform .3s ease-in-out;
+} */
+
+/* .home {
+  min-height: 90vh;
+  padding-top: 3rem;
+} */
+
+#cart {
+    padding-top: 0;
+}
+
+#cart-title {
+    padding-top: 3rem;
+}
+
+.cart-btn {
+    /* outline: none; */
+    /* border: none; */
+    border-radius: 10px;
+    font-size: 1.2em;
+    transition: all .3s ease-in;
+}
+
+.title-style{position: relative;}
+
+.title-style::after {
+  content: '';
+  width: 5%;
+  height: 8%;
+  background-color: #343a40;
+  position: absolute;
+  top: 103%;
+}
+
+#cart-title::after {
+    width: 3%;
+    left: 48.5%;
+    height: 2%;
+}
+
+#cart #total-title::after, #contact h3::after {
+    width: 12%;
+    left: 0;
+}
+
+#history h3::after {
+    width: 7%;
+    left: 46.5%;
+}
+
+.home h3::after{
+    left: 47.5%;
+}
+
+#box #cartBtn {
+    /* border: none; */
+    border-radius: 5px;
+}
+
+#box h2::after {
+    width: 13%;
+    left: 0;
+}
+
+.dropdown {
+    float: left;
+    
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    
+    border: none;
+    outline: none;
+    /* color: rgba(255,255,255,.5); */
+    color: rgba(0,0,0,.5);
+    padding: 8px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+
+  .dropdown .dropbtn:hover {
+    /* color: rgba(255,255,255,.75) */
+    color: rgba(0,0,0,.75)
+  }
+  
+  /* Add a red background color to navbar links on hover */
+
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+ 
+  #myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    /* border: none; Remove borders */
+    /* outline: none; Remove outline */
+    background-color: white; /*Set a background color*/
+    /* color: white; Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  /* #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  /* } */ 

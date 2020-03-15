@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between first-nav">
+            <a class="navbar-brand text-light" href="home.html">E-COMMERCE</a>
+        </nav>
+
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light second-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcontent" aria-controls="navbarcontent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarcontent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Cart</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="order-history.html">History</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" id="contact">
+        <h3 class="title-style mb-5" id="contact-title">Leave us a message</h3>
+        <form>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <label for="name-field">Name*</label>
+                    <input type="text" class="form-control mb-2" id="name-field" placeholder="Enter Name" minlength="3" maxlength="50" required>
+                    <div class="invalid-feedback">
+                      Name should be between 3 to 50 characters
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="email-field">Email*</label>
+                    <input type="email" class="form-control mb-2" id="email-field" aria-describedby="emailHelp" placeholder="Enter email" pattern = "(.+)@(.+){2,}\.(.+){2,}" required>
+                    <div class="invalid-feedback">
+                      Enter a valid email
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sub-field">Subject*</label>
+                <input type="text" class="form-control mb-2" id="sub-field" placeholder="Subject" required>
+                <div class="invalid-feedback">
+                  Required Field
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="msg-field">Message*</label>
+                <textarea class="form-control" id="msg-field" rows="3" placeholder="Your message ..." required></textarea>
+                <div class="invalid-feedback">
+                  Required Field
+                </div>
+            </div>
+            <button id="submitBtn" type="submit" class="btn btn-outline-dark submit-btn mb-2">Submit</button>
+        </form>
+    </div>
+
+    <button id="myBtn" class="btn btn-outline-dark fa fa-arrow-up" title="Go to top"></button>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-4">
+        Copyright&copy; 2020 - ITI OS Team
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/top-script.js"></script>
+</body>
+</html>
