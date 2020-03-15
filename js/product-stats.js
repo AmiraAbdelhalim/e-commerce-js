@@ -11,10 +11,11 @@ req.onload = function() {
     var res =JSON.parse(this.response);
     let Category = res.data.Groups.Category;
     let Suppliers  = res.data.Groups.SupplierName;
-    // console.log(Object.keys(Category)[0]);
+    // console.log(res.data);
     for (const [key, value] of Object.entries(Category)) {
         let newCategory = document.createElement('a');
-        newCategory.textContent = key + " " + value;
+        // newCategory.textContent = key + " " + value;
+        newCategory.textContent = key;
         newCategory.href = '#';
         newCategory.className = 'dropdown-item';
         // console.log(newCategory);
@@ -23,10 +24,10 @@ req.onload = function() {
           let cat = key;
           $.ajax({
             method:"GET",
-            url:`https://afternoon-falls-30227.herokuapp.com/api/v1/products?category=${cat}`
+            url:`https://afternoon-falls-30227.herokuapp.com/api/v1/products?category=${cat}&limit=${value}`
         })
         .done(function(response){
-            const products=response.data;
+            const products=response;
             htmlEl(products, true);
         }) 
            
@@ -37,7 +38,8 @@ req.onload = function() {
 
       for (const [key, value] of Object.entries(Suppliers)) {
         let newSupplier = document.createElement('a');
-        newSupplier.textContent = key + " " + value;
+        // newSupplier.textContent = key + " " + value;
+        newSupplier.textContent = key;
         newSupplier.href = '#';
         newSupplier.className = 'dropdown-item';
         // console.log(newCategory);
@@ -48,10 +50,10 @@ req.onload = function() {
           
           $.ajax({
             method:"GET",
-            url:`https://afternoon-falls-30227.herokuapp.com/api/v1/products?supplier=${sup}`
+            url:`https://afternoon-falls-30227.herokuapp.com/api/v1/products?supplier=${sup}&limit=${value}`
         })
         .done(function(response){
-            const products=response.data;
+            const products=response;
             htmlEl(products, true);
         }) 
            

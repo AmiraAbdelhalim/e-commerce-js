@@ -21,11 +21,13 @@ searchBtn.addEventListener('click', (ev) => {
 
 
 //function to render html
-function htmlEl(products, search=false){
+function htmlEl(allProducts, search=false){
 
     divProducts.innerHTML = "";
     row.innerHTML = "";
     btn.innerHTML = "";
+
+    products = allProducts.data;
 
     if(products.length) {
         for (let i=0; i< products.length; i++){//render html to each product
@@ -124,7 +126,7 @@ function renderPage(search = '') {
             url:"https://afternoon-falls-30227.herokuapp.com/api/v1/products"
         })
         .done(function(response){
-            products=response.data;
+            products=response;
             htmlEl(products);
         }) 
 
@@ -134,8 +136,8 @@ function renderPage(search = '') {
             url:`https://afternoon-falls-30227.herokuapp.com/api/v1/products?q=${search}`
         })
         .done(function(response){
-            products=response.data;
-            console.log(products.Name);
+            products=response;
+            // console.log(products.Name);
             htmlEl(products, true);
         })
     }
@@ -158,7 +160,7 @@ function getNextPage(){
     .done(function(response){
         // console.log(response);
         
-        const products=response.data;
+        const products=response;
         // console.log(products);
         topFunction();
         htmlEl(products);
@@ -178,7 +180,7 @@ function getPrevPage(){
         url:`https://afternoon-falls-30227.herokuapp.com/api/v1/products?page=${count}`
     })
     .done(function(response){
-        const products=response.data;
+        const products=response;
         topFunction();
         htmlEl(products);
     }) 
