@@ -1,6 +1,6 @@
 const tableBody = document.querySelector('tbody');
 const nothingPara = document.querySelector('table + p');
-const checkoutBtn = document.querySelector('#checkout');
+const checkoutBtn = document.querySelector('.checkout-btn');
 const purchaseMsg = document.querySelector('#purchase-msg');
 let totalPrice = document.querySelector('#totalPrice').lastChild;
 
@@ -62,7 +62,7 @@ if(sessionStorage.length){
 
         const removeBtn = document.createElement('button');
 
-        removeBtn.className = 'btn btn-dark';
+        removeBtn.className = 'btn btn-outline-dark remove-btn';
         removeBtn.innerHTML = '<i class="fa fa-times"></i>';
 
         image.setAttribute('src', productObj.ProductPicUrl);
@@ -118,7 +118,7 @@ checkoutBtn.onclick = (ev) => {
         let res = store.add({totalPrice: totalPrice.data, totalQuantity: quantityOrdered, date: date.toDateString()});
 
         res.onsuccess = () => {
-            purchaseMsg.style.color = 'green';
+            purchaseMsg.style.color = '#7c3552';
             purchaseMsg.style.paddingTop = '1rem';
             purchaseMsg.textContent = 'Thanks for purchasing';
             sessionStorage.clear();
@@ -126,12 +126,12 @@ checkoutBtn.onclick = (ev) => {
         }
 
         res.onerror = () => {
-            purchaseMsg.style.color = 'red';
+            purchaseMsg.style.color = '#7c3552';
             purchaseMsg.style.paddingTop = '1rem';
             purchaseMsg.textContent = 'Purchase was unsuccessful';
         }
     } else {
-        purchaseMsg.style.color = 'red';
+        purchaseMsg.style.color = '#7c3552';
         purchaseMsg.style.paddingTop = '1rem';
         purchaseMsg.textContent = 'Your cart is empty';
     }

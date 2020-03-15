@@ -10,7 +10,7 @@ body {
 }
 
 .first-nav, footer, .title-style::after,
-.next-btn:hover, .prev-btn:hover, .cart-btn:hover{
+.next-btn:hover, .prev-btn:hover, .cart-btn:hover, .checkout-btn:hover, .remove-btn:hover{
   background: linear-gradient(135deg, #7c3552, #343a40, #7c3552);
 }
 
@@ -51,6 +51,11 @@ a:hover, a {
     padding-top: 3rem;
     min-height: 90vh;
 }
+/* 
+.card:hover {
+  transform: scale(1.1);
+  transition: transform .3s ease-in-out;
+} */
 
 /* .home {
   min-height: 90vh;

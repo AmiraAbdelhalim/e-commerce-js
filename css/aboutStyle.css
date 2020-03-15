@@ -63,10 +63,6 @@ body {
     color:rgb(65, 62, 62);
   }
   
-  /* .container {
-    padding: 0 16px;
-  } */
-  
   .container::after, .row::after {
     content: "";
     clear: both;
