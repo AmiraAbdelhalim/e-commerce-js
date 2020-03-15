@@ -62,6 +62,12 @@ if(sessionStorage.length){
 
         const removeBtn = document.createElement('button');
 
+        imageCol.addEventListener('click', () => goToDetails(productObj.ProductId));
+        nameCol.addEventListener('click', () => goToDetails(productObj.ProductId));
+
+        imageCol.style.cursor = 'pointer';
+        nameCol.style.cursor = 'pointer';
+
         removeBtn.className = 'btn btn-outline-dark remove-btn';
         removeBtn.innerHTML = '<i class="fa fa-times"></i>';
 
@@ -99,6 +105,10 @@ if(sessionStorage.length){
 
         totalPrice.data = Number(totalPrice.data) + Number(productObj.Price);
     }
+}
+
+function goToDetails(id) {
+    window.location.href = `details.html?ProductId=${id}`
 }
 
 checkoutBtn.onclick = (ev) => {

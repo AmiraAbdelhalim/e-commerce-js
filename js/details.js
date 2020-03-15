@@ -97,7 +97,7 @@ xhr.onload=()=>{
     image.setAttribute("src",res.ProductPicUrl);
     // btn.textContent="<i class='fa fa-shopping-cart bg-dark'></i>";
     btn.setAttribute('id', 'cartBtn');
-    btn.className='bg-dark btn-block text-light px-4 py-3 mt-5';
+    btn.className='btn btn-outline-dark add-btn btn-block px-4 py-3 mt-5';
     btn.textContent = 'Add To Cart';
     btn.style.fontWeight = 'bold';
     // btn.textContent="card";

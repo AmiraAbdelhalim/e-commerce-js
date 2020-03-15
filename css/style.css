@@ -11,12 +11,12 @@ body {
 
 .first-nav, footer, .title-style::after,
 .next-btn:hover, .prev-btn:hover, .cart-btn:hover, .checkout-btn:hover,
-.remove-btn:hover, .submit-btn:hover{
+.remove-btn:hover, .submit-btn:hover, .add-btn:hover{
   background: linear-gradient(135deg, #7c3552, #343a40, #7c3552);
 }
 
 .next-btn, .prev-btn, .cart-btn, .checkout-btn,
-.remove-btn, .submit-btn {
+.remove-btn, .submit-btn, .add-btn {
   font-weight: bold;
 }
 
@@ -73,7 +73,7 @@ a:hover, a {
 }
 
 #cart-title {
-    padding-top: 5rem;
+    padding-top: 3rem;
 }
 
 .cart-btn {
@@ -116,7 +116,7 @@ a:hover, a {
 }
 
 #box #cartBtn {
-    border: none;
+    /* border: none; */
     border-radius: 5px;
 }
 
