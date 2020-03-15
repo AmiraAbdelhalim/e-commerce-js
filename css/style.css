@@ -1,3 +1,23 @@
+body {
+  /* background: linear-gradient(#333, #7c3552); */
+  background: 
+    /* linear-gradient(
+      rgba(134, 130, 130, 0.45), 
+      #7c3552
+    ), */
+    url(../img/main-bg.jpeg);
+  background-size: cover;
+}
+
+.first-nav, footer, .title-style::after,
+.next-btn:hover, .prev-btn:hover, .cart-btn:hover{
+  background: linear-gradient(135deg, #7c3552, #343a40, #7c3552);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #7c3552;
+}
+
 img {max-width: 100%;}
 
 table figure {
@@ -22,15 +42,20 @@ a:hover, a {
   height: 87%;
 }
 
-nav, #section .card, .image-card {
+#section .card, .image-card {
     box-shadow: 1px 1px 3px 3px #eee;
     background: white;
 }
 
-.home, #cart, #contact, #history, #box{
-    padding-top: 5rem;
+ .home, #cart, #contact, #history, #box{
+    padding-top: 3rem;
     min-height: 90vh;
 }
+
+/* .home {
+  min-height: 90vh;
+  padding-top: 3rem;
+} */
 
 #cart {
     padding-top: 0;
@@ -41,11 +66,11 @@ nav, #section .card, .image-card {
 }
 
 .cart-btn {
-    outline: none;
-    border: none;
+    /* outline: none; */
+    /* border: none; */
     border-radius: 10px;
     font-size: 1.2em;
-    transition: all 2s ease-in-out;
+    transition: all .3s ease-in;
 }
 
 .title-style{position: relative;}
@@ -54,7 +79,7 @@ nav, #section .card, .image-card {
   content: '';
   width: 5%;
   height: 8%;
-  background-color: #ffc107;
+  background-color: #343a40;
   position: absolute;
   top: 103%;
 }
@@ -99,7 +124,8 @@ nav, #section .card, .image-card {
     
     border: none;
     outline: none;
-    color: rgba(255,255,255,.5);
+    /* color: rgba(255,255,255,.5); */
+    color: rgba(0,0,0,.5);
     padding: 8px;
     background-color: inherit;
     font-family: inherit; /* Important for vertical align on mobile phones */
@@ -107,7 +133,8 @@ nav, #section .card, .image-card {
   }
 
   .dropdown .dropbtn:hover {
-    color: rgba(255,255,255,.75)
+    /* color: rgba(255,255,255,.75) */
+    color: rgba(0,0,0,.75)
   }
   
   /* Add a red background color to navbar links on hover */

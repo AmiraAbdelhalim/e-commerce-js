@@ -14,8 +14,12 @@ req.onload = function() {
     // console.log(Object.keys(Category)[0]);
     for (const [key, value] of Object.entries(Category)) {
         // console.log(key, value);
-        let newCategory = document.createElement('span');
-        newCategory.innerHTML = "<a href='# " + "'>" + key + " " + value + "</a>";
+        // let newCategory = document.createElement('span');
+        // newCategory.innerHTML = "<a href='# " + "'>" + key + " " + value + "</a>";
+        let newCategory = document.createElement('a');
+        newCategory.textContent = key + " " + value;
+        newCategory.href = '#';
+        newCategory.className = 'dropdown-item';
         // console.log(newCategory);
         categories.appendChild(newCategory);
         newCategory.addEventListener('click',(ev)=>{
@@ -36,8 +40,12 @@ req.onload = function() {
 
       for (const [key, value] of Object.entries(Suppliers)) {
         // console.log(key, value);
-        let newSupplier = document.createElement('span');
-        newSupplier.innerHTML = "<a href='# " + "'>" + key + " " + value + "</a>";
+        // let newSupplier = document.createElement('span');
+        // newSupplier.innerHTML = "<a href='# " + "'>" + key + " " + value + "</a>";
+        let newSupplier = document.createElement('a');
+        newSupplier.textContent = key + " " + value;
+        newSupplier.href = '#';
+        newSupplier.className = 'dropdown-item';
         // console.log(newCategory);
         supplier.appendChild(newSupplier);
         newSupplier.addEventListener('click',(ev)=>{

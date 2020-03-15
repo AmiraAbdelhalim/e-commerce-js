@@ -47,7 +47,7 @@ function htmlEl(products, search=false){
             name.textContent=products[i].Name;
             img.setAttribute("src",products[i].ProductPicUrl);
             price.innerHTML='<span>&euro;</span>'+products[i].Price;
-            cartBtn.className='fa fa-shopping-cart cart-btn bg-dark text-light px-4 py-2';
+            cartBtn.className='fa fa-shopping-cart cart-btn btn btn-outline-dark px-4 py-2';
             contView.setAttribute('href', `details.html?ProductId=${products[i].ProductId}`);//to add view page
     
             imageCont.appendChild(img);
@@ -84,14 +84,14 @@ function htmlEl(products, search=false){
             //adding next , previous button and page number
             const nextBtn=document.createElement("button");
             nextBtn.textContent='NEXT';
-            nextBtn.className="btn btn-outline-dark mx-3";
+            nextBtn.className="btn btn-outline-dark mx-3 next-btn";
             //justify-content-end p-2 
             nextBtn.addEventListener("click", (e)=>getNextPage());
             
     
             const prevBtn=document.createElement("button");
             prevBtn.textContent='PREVIOUS';
-            prevBtn.className=" btn btn-outline-dark mx-3";
+            prevBtn.className=" btn btn-outline-dark mx-3 prev-btn";
             //justify-content-start p-2
             prevBtn.addEventListener("click", (e)=>getPrevPage());
     
